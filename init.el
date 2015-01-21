@@ -1,44 +1,38 @@
 ;;;
 ;;; Initialize packages
 ;;;
-(setq rjs-packages
+
+; list the packages you want
+(setq package-list
       '(
 	web-mode
 	yasnippet
 	angular-snippets
 	))
 
-(package-initialize)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+; list the repositories containing them
+(setq package-archives
+      '(("melpa" . "http://melpa.org/packages/")
+	("gnu" . "http://elpa.gnu.org/packages/")
+	("marmalade" . "http://marmalade-repo.org/packages/")))
 
-(when (not package-archive-contents)
+; activate all the packages (in particular autoloads)
+(package-initialize)
+
+(unless package-archive-contents
   (package-refresh-contents))
 
-(dolist (pkg rjs-packages)
-  (when (and (not (package-installed-p pkg))
-	     (assoc pkg package-archive-contents))
-    (package-install pkg)))
-
-(defun package-list-unaccounted-packages ()
-  "Like `package-list-packages', but shows only the packages that 
-are installed and are not in `rjs-packages'.  Useful for
-cleaning out unwanted packeges."
-  (interactive)
-  (package-show-package-list
-   (remove-if-not (lambda (x) (and (not (memq x rjs-packages))
-				   (not (package-built-in-p x))
-				   (package-installed-p x)))
-		  (mapcar 'car package-archive-contents))))
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 ;;;
 ;;; General configuration
 ;;; 
 (setq indent-tabs-mode nil)      ; force use of spaces
 (setq inhibit-startup-message t) ; don't show welcome screen
-
+(ido-mode t)                     ; activate ido mode
 
 ;;;
 ;;; web-mode configuration
