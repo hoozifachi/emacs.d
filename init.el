@@ -9,6 +9,7 @@
 	web-mode
 	yasnippet
 	angular-snippets
+	zencoding-mode
 	))
 
 ; list the repositories containing them
@@ -34,6 +35,7 @@
 (setq indent-tabs-mode nil)      ; force use of spaces
 (setq inhibit-startup-message t) ; don't show welcome screen
 (ido-mode t)                     ; activate ido mode
+(tool-bar-mode -1)               ; turn off toolbar
 
 ;;;
 ;;; web-mode configuration
@@ -59,6 +61,13 @@
 ;;; Yasnippet configuration
 ;;;
 (yas-global-mode 1)
+
+
+;;;
+;;; zencoding-mode configuration
+;;;
+(add-hook 'sgml-mode-hook 'zencoding-mode)   ; start on any markup modes
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
