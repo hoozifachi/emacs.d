@@ -1,5 +1,6 @@
 ;;;
 ;;; Initialize packages
+;;;   From http://stackoverflow.com/a/10093312
 ;;;
 
 ; list the packages you want
