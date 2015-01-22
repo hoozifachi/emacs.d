@@ -67,6 +67,7 @@
 ;;; zencoding-mode configuration
 ;;;
 (add-hook 'sgml-mode-hook 'zencoding-mode)   ; start on any markup modes
+(add-hook 'web-mode-hook 'zencoding-mode)   ; start on any markup modes
 
 
 (custom-set-variables
