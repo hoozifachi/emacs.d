@@ -9,7 +9,6 @@
 	web-mode
 	yasnippet
 	angular-snippets
-	zencoding-mode
 	))
 
 ; list the repositories containing them
@@ -67,7 +66,7 @@
 ;;; zencoding-mode configuration
 ;;;
 (add-hook 'sgml-mode-hook 'zencoding-mode)   ; start on any markup modes
-(add-hook 'web-mode-hook 'zencoding-mode)   ; start on any markup modes
+;;(add-hook 'web-mode-hook 'zencoding-mode)   ; start on any markup modes
 
 
 (custom-set-variables
