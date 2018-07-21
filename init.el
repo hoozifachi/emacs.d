@@ -3,8 +3,6 @@
 ;;;   From http://stackoverflow.com/a/10093312
 ;;;
 
-;; Some changes
-
 ; list the packages you want
 (setq package-list
       '(
