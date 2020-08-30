@@ -1,5 +1,6 @@
 ;; use-package setup
 (require 'package)
+
 (setq package-enable-at-startup nil) ; dont do it immediately
 (setq package-archives '(("org"       . "http://orgmode.org/elpa/")
              ("gnu"       . "http://elpa.gnu.org/packages/")

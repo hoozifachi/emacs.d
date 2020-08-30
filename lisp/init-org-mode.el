@@ -34,8 +34,8 @@
 (setq org-todo-keywords '((sequence "TODO(t)" "WAITING (w)" "|" "DONE(d)" "CANCELLED(c)")))
 
 ;; Open org file and agenda
-(find-file "~/org/gtd.org")
-(org-agenda nil "a")
+;;(find-file "~/org/gtd.org")
+;;(org-agenda nil "a")
 
 ;; ivy hijacked it
 (global-set-key (kbd "C-c C-R") 'org-reveal)

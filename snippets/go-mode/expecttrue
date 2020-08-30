@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: expecttrue
+# key: expt
+# --
+Expect($1).To(BeTrue())
